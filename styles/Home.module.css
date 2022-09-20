@@ -14,10 +14,12 @@
 
 .thumbnailImage {
   width: 100%;
+  height: 400px;
   margin-bottom: 20px;
   box-shadow: 4px 5px 12px black;
   transition: all 0.3s;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .thumbnailImage:hover {

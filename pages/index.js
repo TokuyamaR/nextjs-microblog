@@ -38,6 +38,7 @@ export default function Home() {
             <Link href="/posts/firstPost">
               <p>記事1のタイトル</p>
             </Link>
+            <small className={utilityStyles.lightText}>2022.1.1</small>
           </article>
           <article>
             <Link href="/">
@@ -50,6 +51,7 @@ export default function Home() {
             <Link href="/">
               <p>記事2のタイトル</p>
             </Link>
+            <small className={utilityStyles.lightText}>2022.1.1</small>
           </article>
           <article>
             <Link href="/">
@@ -62,6 +64,7 @@ export default function Home() {
             <Link href="/">
               <p>記事3のタイトル</p>
             </Link>
+            <small className={utilityStyles.lightText}>2022.1.1</small>
           </article>
           <article>
             <Link href="/">
@@ -74,6 +77,7 @@ export default function Home() {
             <Link href="/">
               <p>記事4のタイトル</p>
             </Link>
+            <small className={utilityStyles.lightText}>2022.1.1</small>
           </article>
         </div>
       </section>
