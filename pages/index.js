@@ -39,21 +39,21 @@ export default function Home({ allPostsData }) {
       >
         <h2 className={utilityStyles.headingLg}>Tokuyamaの記事一覧</h2>
         <div className={styles.grid}>
-          {allPostsData.map((post) => {
+          {allPostsData.map(({ id, attributes }) => {
             return (
-              <article key={post.id}>
+              <article key={id}>
                 <Link href="/posts/firstPost">
                   <img
-                    src={post.attributes.thumbnail}
+                    src={attributes.thumbnail}
                     className={styles.thumbnailImage}
                     alt="記事1"
                   />
                 </Link>
                 <Link href="/posts/firstPost">
-                  <p>{post.attributes.title}</p>
+                  <p>{attributes.title}</p>
                 </Link>
                 <small className={utilityStyles.lightText}>
-                  {post.attributes.date}
+                  {attributes.date}
                 </small>
               </article>
             );
