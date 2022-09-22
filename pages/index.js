@@ -51,14 +51,14 @@ export default function Home({ allPostsData }) {
           {allPostsData.map(({ id, attributes }) => {
             return (
               <article key={id}>
-                <Link href="/posts/firstPost">
+                <Link href={`/posts/${id}`}>
                   <img
                     src={attributes.thumbnail}
                     className={styles.thumbnailImage}
                     alt="記事1"
                   />
                 </Link>
-                <Link href="/posts/firstPost">
+                <Link href={`/posts/${id}`}>
                   <p>{attributes.title}</p>
                 </Link>
                 <small className={utilityStyles.lightText}>
