@@ -27,7 +27,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout>
+    <Layout home>
       <Head>
         <title>Tokuyama Blog</title>
         <meta
@@ -55,7 +55,7 @@ export default function Home({ allPostsData }) {
                   <img
                     src={thumbnail}
                     className={styles.thumbnailImage}
-                    alt="記事1"
+                    alt={title}
                   />
                 </Link>
                 <Link href={`/posts/${id}`}>
