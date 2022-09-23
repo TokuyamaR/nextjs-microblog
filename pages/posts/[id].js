@@ -1,5 +1,7 @@
 import Layout from "../../components/Layout/layout";
+import utilityStyles from "../../styles/utility.module.css";
 import { getPostData, getAllPostPaths } from "../../lib/getPost";
+import sanitize from "sanitize-html";
 
 export async function getStaticPaths() {
   return {
@@ -21,11 +23,14 @@ export async function getStaticProps({ params }) {
 export default function post({ postData }) {
   return (
     <Layout>
-      {postData.title}
-      <br />
-      {postData.date}
-      <br />
-      {postData.htmlContents}
+      <article>
+        <h1 className={utilityStyles.headingXl}>{postData.title}</h1>
+        <div className={utilityStyles.lightText}>{postData.date}</div>
+        <br />
+        <div
+          dangerouslySetInnerHTML={{ __html: sanitize(postData.htmlContents) }}
+        />
+      </article>
     </Layout>
   );
 }
