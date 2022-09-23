@@ -6,7 +6,6 @@ export default function Page404() {
     <Layout>
       <div>
         <h1>ページが見つかりませんでした。</h1>
-        <Link href="/">ホームへ戻る</Link>
       </div>
     </Layout>
   );

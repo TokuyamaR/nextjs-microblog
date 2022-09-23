@@ -39,7 +39,7 @@ export default function Home({ allPostsData }) {
 
       <section className={utilityStyles.headingMd}>
         <p>
-          サンプルテキストが入ります。サンプルテキストが入ります。サンプルテキストが入ります。サンプルテキストが入ります。
+          フロントエンドエンジニアであるTokuyamaのミニブログです。このブログはNext.jsにて作成しています。
         </p>
       </section>
 

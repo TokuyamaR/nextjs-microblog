@@ -8,7 +8,6 @@ export default function Page500() {
         <h1>
           サーバーエラーです。しばらく経ってから再度アクセスしてください。
         </h1>
-        <Link href="/">ホームへ戻る</Link>
       </div>
     </Layout>
   );
