@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Layout from "../../components/Layout/layout";
 import utilityStyles from "../../styles/utility.module.css";
 import { getPostData, getAllPostPaths } from "../../lib/getPost";
@@ -23,6 +24,14 @@ export async function getStaticProps({ params }) {
 export default function post({ postData }) {
   return (
     <Layout>
+      <Head>
+        <title>{postData.title}</title>
+        <meta
+          name="description"
+          content={`${postData.title} についての記事です。`}
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <article>
         <h1 className={utilityStyles.headingXl}>{postData.title}</h1>
         <div className={utilityStyles.lightText}>{postData.date}</div>

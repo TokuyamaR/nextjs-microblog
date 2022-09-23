@@ -35,7 +35,7 @@ const Layout = ({ children, home }) => {
       <main>{children}</main>
       {!home && (
         <Link href="/" className={styles.backToHome}>
-          ← ホームへ戻る
+         ← ホームへ戻る
         </Link>
       )}
     </div>
