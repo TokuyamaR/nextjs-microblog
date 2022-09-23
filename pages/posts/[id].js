@@ -26,7 +26,6 @@ export default function post({ postData }) {
       <article>
         <h1 className={utilityStyles.headingXl}>{postData.title}</h1>
         <div className={utilityStyles.lightText}>{postData.date}</div>
-        <br />
         <div
           dangerouslySetInnerHTML={{ __html: sanitize(postData.htmlContents) }}
         />

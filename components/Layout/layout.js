@@ -1,6 +1,7 @@
 import styles from "./layout.module.css";
 import utilityStyles from "../../styles/utility.module.css";
 import Head from "next/head";
+import Link from "next/link";
 
 const name = "Tokuyama Blog";
 
@@ -32,6 +33,11 @@ const Layout = ({ children, home }) => {
         )}
       </header>
       <main>{children}</main>
+      {!home && (
+        <Link href="/" className={styles.backToHome}>
+          ← ホームへ戻る
+        </Link>
+      )}
     </div>
   );
 };
