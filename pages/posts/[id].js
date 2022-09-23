@@ -18,6 +18,14 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function post() {
-  return <Layout>{postData.id}</Layout>;
+export default function post({ postData }) {
+  return (
+    <Layout>
+      {postData.title}
+      <br />
+      {postData.date}
+      <br />
+      {postData.htmlContents}
+    </Layout>
+  );
 }
