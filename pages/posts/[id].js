@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout/layout";
-import { getAllPostPaths } from "../../lib/getPost";
+import { getPostData, getAllPostPaths } from "../../lib/getPost";
 
 export async function getStaticPaths() {
   return {
@@ -8,6 +8,16 @@ export async function getStaticPaths() {
   };
 }
 
+export async function getStaticProps({ params }) {
+  const postData = await getPostData(params.id);
+
+  return {
+    props: {
+      postData,
+    },
+  };
+}
+
 export default function post() {
-  return <Layout>動的なルーティング設定によるページ</Layout>;
+  return <Layout>{postData.id}</Layout>;
 }
