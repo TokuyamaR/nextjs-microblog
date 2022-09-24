@@ -3,25 +3,34 @@ import Layout from "../../components/Layout/layout";
 import utilityStyles from "../../styles/utility.module.css";
 import { getPostData, getAllPostPaths } from "../../lib/getPost";
 import sanitize from "sanitize-html";
+import { GetStaticProps, GetStaticPaths } from "next";
 
-export async function getStaticPaths() {
+type PostDataType = {
+  postData: {
+    title: string;
+    date: string;
+    thumbnail: string;
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: getAllPostPaths(),
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = await getPostData(params.id as string);
 
   return {
     props: {
       postData,
     },
   };
-}
+};
 
-export default function post({ postData }) {
+export default function post({ postData }: PostDataType) {
   return (
     <Layout>
       <Head>
