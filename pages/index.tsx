@@ -4,9 +4,17 @@ import Layout from "../components/Layout/layout";
 import styles from "../styles/Home.module.css";
 import utilityStyles from "../styles/utility.module.css";
 import { getPostsData } from "../lib/getPost";
+import { GetStaticProps } from "next";
+
+type AllPostsDataType = {
+  id: string;
+  title: string;
+  date: string;
+  thumbnail: string;
+}[];
 
 // SSGの場合のデータ取得
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getPostsData();
 
   return {
@@ -14,7 +22,7 @@ export async function getStaticProps() {
       allPostsData,
     },
   };
-}
+};
 
 // SSRの場合のデータ取得
 // export async function getServerSideProps(context) {
@@ -25,7 +33,7 @@ export async function getStaticProps() {
 //   };
 // }
 
-export default function Home({ allPostsData }) {
+export const Home = (allPostsData: AllPostsDataType) => {
   return (
     <Layout home>
       <Head>
@@ -69,4 +77,4 @@ export default function Home({ allPostsData }) {
       </section>
     </Layout>
   );
-}
+};

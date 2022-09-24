@@ -6,7 +6,7 @@ import FC from "react";
 
 type LayoutProps = {
   children: React.ReactNode;
-  home: string;
+  home?: boolean;
 };
 
 const name = "Tokuyama Blog";
