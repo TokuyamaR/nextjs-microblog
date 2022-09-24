@@ -2,10 +2,16 @@ import styles from "./layout.module.css";
 import utilityStyles from "../../styles/utility.module.css";
 import Head from "next/head";
 import Link from "next/link";
+import FC from "react";
+
+type LayoutProps = {
+  children: React.ReactNode;
+  home: string;
+};
 
 const name = "Tokuyama Blog";
 
-const Layout = ({ children, home }) => {
+const Layout = ({ children, home }: LayoutProps) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -35,7 +41,7 @@ const Layout = ({ children, home }) => {
       <main>{children}</main>
       {!home && (
         <Link href="/" className={styles.backToHome}>
-         ← ホームへ戻る
+          ← ホームへ戻る
         </Link>
       )}
     </div>
