@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Layout from "../components/Layout/layout";
 
-export default function Page404() {
+export const Page404 = () => {
   return (
     <Layout>
       <div>
@@ -9,4 +8,4 @@ export default function Page404() {
       </div>
     </Layout>
   );
-}
+};

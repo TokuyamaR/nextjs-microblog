@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Layout from "../components/Layout/layout";
 
-export default function Page500() {
+export const Page500 = () => {
   return (
     <Layout>
       <div>
@@ -11,4 +10,4 @@ export default function Page500() {
       </div>
     </Layout>
   );
-}
+};
