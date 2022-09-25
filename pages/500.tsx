@@ -1,4 +1,4 @@
-import Layout from "../components/Layout/layout";
+import { Layout } from "../components/Layout/layout";
 
 export const Page500 = () => {
   return (

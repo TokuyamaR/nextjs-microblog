@@ -2,7 +2,6 @@ import styles from "./layout.module.css";
 import utilityStyles from "../../styles/utility.module.css";
 import Head from "next/head";
 import Link from "next/link";
-import FC from "react";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -11,7 +10,7 @@ type LayoutProps = {
 
 const name = "Tokuyama Blog";
 
-const Layout = ({ children, home }: LayoutProps) => {
+export const Layout = ({ children, home }: LayoutProps) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -47,5 +46,3 @@ const Layout = ({ children, home }: LayoutProps) => {
     </div>
   );
 };
-
-export default Layout;

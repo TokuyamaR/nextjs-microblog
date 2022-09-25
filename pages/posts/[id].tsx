@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "../../components/Layout/layout";
+import { Layout } from "../../components/Layout/layout";
 import utilityStyles from "../../styles/utility.module.css";
 import { getPostData, getAllPostPaths } from "../../lib/getPost";
 import sanitize from "sanitize-html";
