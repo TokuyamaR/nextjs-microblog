@@ -11,6 +11,7 @@ type PostDataType = {
     title: string;
     date: string;
     thumbnail: string;
+    htmlContents: string;
   };
 };
 
