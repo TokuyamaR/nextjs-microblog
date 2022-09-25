@@ -1,6 +1,6 @@
 import { Layout } from "../components/Layout/layout";
 
-export const Page404 = () => {
+export default function Page404() {
   return (
     <Layout>
       <div>
@@ -8,4 +8,4 @@ export const Page404 = () => {
       </div>
     </Layout>
   );
-};
+}

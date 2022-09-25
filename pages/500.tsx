@@ -1,6 +1,6 @@
 import { Layout } from "../components/Layout/layout";
 
-export const Page500 = () => {
+export default function Page500() {
   return (
     <Layout>
       <div>
@@ -10,4 +10,4 @@ export const Page500 = () => {
       </div>
     </Layout>
   );
-};
+}
