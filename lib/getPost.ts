@@ -4,6 +4,12 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import remarkHtml from "remark-html";
 
+type FileContentsType = {
+  title: string;
+  date: string;
+  thumbnail: string;
+};
+
 const postsDirectory = path.join(process.cwd(), "posts");
 const fileNames = fs.readdirSync(postsDirectory);
 
@@ -18,13 +24,13 @@ export function getPostsData() {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterContents = matter(fileContents);
 
-    return { id, ...matterContents.data };
+    return { id, ...(matterContents.data as FileContentsType) };
   });
   return allPostsData;
 }
 
 // mdファイルの特定の記事データを取得
-export async function getPostData(id) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterContents = matter(fileContents);
@@ -34,7 +40,11 @@ export async function getPostData(id) {
     .process(matterContents.content);
   const htmlContents = blogContents.toString();
 
-  return { id, htmlContents, ...matterContents.data };
+  return {
+    id,
+    htmlContents,
+    ...(matterContents.data as FileContentsType),
+  };
 }
 
 // getStaticPaths で利用するpathデータを取得

@@ -3,9 +3,14 @@ import utilityStyles from "../../styles/utility.module.css";
 import Head from "next/head";
 import Link from "next/link";
 
+type LayoutProps = {
+  children: React.ReactNode;
+  home?: boolean;
+};
+
 const name = "Tokuyama Blog";
 
-const Layout = ({ children, home }) => {
+export const Layout = ({ children, home }: LayoutProps) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -35,11 +40,9 @@ const Layout = ({ children, home }) => {
       <main>{children}</main>
       {!home && (
         <Link href="/" className={styles.backToHome}>
-         ← ホームへ戻る
+          ← ホームへ戻る
         </Link>
       )}
     </div>
   );
 };
-
-export default Layout;
