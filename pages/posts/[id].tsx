@@ -4,6 +4,7 @@ import utilityStyles from "../../styles/utility.module.css";
 import { getPostData, getAllPostPaths } from "../../lib/getPost";
 import sanitize from "sanitize-html";
 import { GetStaticProps, GetStaticPaths } from "next";
+import { ParsedUrlQuery } from "querystring";
 
 type PostDataType = {
   postData: {
@@ -21,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id as string);
+  const postData = await getPostData((params as ParsedUrlQuery).id as string);
 
   return {
     props: {
